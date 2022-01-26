@@ -3,15 +3,23 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Installation](#install)
+- [Features](#features)
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Example](#example)
 - [References](#references)
 
 ## Introduction <a name = "introduction"></a>
-vue-autocomplete-ele is based on [https://github.com/Pixabay/JavaScript-autoComplete](https://github.com/Pixabay/JavaScript-autoComplete).\
-vue-autocomplete-ele is a MIT-licensed open source project, it is an autcomplete element for your Vue Project which do not use or depends on any third party libraries like jQuery.\
+vue-autocomplete-ele is an Vue component completion suggester.\
+vue-autocomplete-ele is a MIT-licensed open source project, it is an autcomplete element for your Vue Project which do not use or depends on any third party library.\
+Tested in Firefox, Safari, Chrome, Opera, Internet Explorer 8+. No dependencies, written in plain JavaScript.
 vue-autocomplete-ele is Lightwight and Highly configurable which makes its useful in number of situations.
+
+## Features <a name = "features"></a>
+* Lightweight.
+* No jQuery, written in vanilla JS.
+* Smart caching, delay and minimum character settings.
+* Callbacks
 
 ## Installation <a name = "install"></a>
 ```
@@ -67,9 +75,9 @@ import VueAutocompleteEle from 'vue-autocomplete-ele';
         valueIndex: 'id',
         labelIndex: 'sku'
     }"
-    @selected="autocomplete = $event"
+    @selected="autocomplete = $event" // returning data for valueIndex for selected item
 />
 ```
 
 ## References <a name = "references"></a>
-- [https://github.com/Pixabay/JavaScript-autoComplete](https://github.com/Pixabay/JavaScript-autoComplete).
+- Inspired from and wrap around [https://github.com/Pixabay/JavaScript-autoComplete](https://github.com/Pixabay/JavaScript-autoComplete).
