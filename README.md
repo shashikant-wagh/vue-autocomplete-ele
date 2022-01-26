@@ -5,6 +5,7 @@
 - [Installation](#install)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [Example](#example)
 - [References](#references)
 
 ## Introduction <a name = "introduction"></a>
@@ -23,7 +24,8 @@ import VueAutocompleteEle from 'vue-autocomplete-ele';
 ```
 
 ## Configuration <a name = "configuration"></a>
-| Prop                | Type          | Default                   | Description                   |
+
+| Prop                | Type          | <div style="width:290px">Default </div>                   | Description                   |
 |---------------------|---------------|---------------------------|-------------------------------|
 | src                 | Object        |                           | ```{ data: Array, valueIndex: String <from data>, labelIndex: String <from data>}```|
 | id                  | String        | vue-autocomplete          |
@@ -37,8 +39,37 @@ import VueAutocompleteEle from 'vue-autocomplete-ele';
 | noCache             | Boolean       |   false                   | Determines if performed searches should be cached.|
 | sourceHandler       | Function      |                           | The sourceHandler function iterates through an array of (local) choices and we return a new array containing all (lowercased) matches.|
 | renderHandler       | Function      |                           | The renderHandler function allows to customize the dropdown menu item|
-| onSelectHandler     | Function      |                           | The onSelectHandler function allows to do something on select event| 
+| onSelectHandler     | Function      |                           | The onSelectHandler function allows to do something on select event|
 
+
+## Example <a name = "example"></a>
+```
+<vue-autocomplete-ele
+    :src="{
+        data: [
+            {
+                'id': 125,
+                'sku': 'AAAAAAAAAA',
+            },
+            {
+                'id': 154,
+                'sku': 'LIQ-01',
+            },
+            {
+                'id': 186,
+                'sku': 'SHEET-01',
+            },
+            {
+                'id': 187,
+                'sku': 'SHEET-02',
+            }
+        ],
+        valueIndex: 'id',
+        labelIndex: 'sku'
+    }"
+    @selected="autocomplete = $event"
+/>
+```
 
 ## References <a name = "references"></a>
 - [https://github.com/Pixabay/JavaScript-autoComplete](https://github.com/Pixabay/JavaScript-autoComplete).
