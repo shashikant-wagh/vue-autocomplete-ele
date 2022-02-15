@@ -2,8 +2,8 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Installation](#install)
 - [Features](#features)
+- [Installation](#install)
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Example](#example)
