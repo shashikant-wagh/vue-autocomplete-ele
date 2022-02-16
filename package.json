@@ -1,6 +1,6 @@
 {
   "name": "vue-autocomplete-ele",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/vue-autocomplete-ele.ssr.js",
   "browser": "dist/vue-autocomplete-ele.esm.js",
@@ -19,10 +19,17 @@
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
+  "keywords": [
+    "Typeahead",
+    "Autocomplete",
+    "VueTypeahead",
+    "VueAutocomplete"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/shashikant-wagh/vue-autocomplete-ele.git"
   },
+  "author": "Wagh Shashikant S. <shashikantwagh721@gmail.com>",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -34,17 +41,19 @@
     "@rollup/plugin-replace": "^2.4.2",
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
+    "@vue/compiler-sfc": "^3.0.11",
     "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
+    "postcss": "^8.2.10",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.8",
+    "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-vue": "^5.1.9",
-    "vue": "^2.6.14",
-    "vue-template-compiler": "^2.6.14"
+    "rollup-plugin-vue": "^6.0.0",
+    "vue": "^3.0.5"
   },
   "peerDependencies": {
-    "vue": "^2.6.14"
+    "vue": "^3.0.5"
   },
   "engines": {
     "node": ">=12"

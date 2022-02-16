@@ -10,8 +10,8 @@ export default /*#__PURE__*/(() => {
   const installable = component;
 
   // Attach install function executed by Vue.use()
-  installable.install = (Vue) => {
-    Vue.component('VueAutocompleteEle', installable);
+  installable.install = (app) => {
+    app.component('VueAutocompleteEle', installable);
   };
   return installable;
 })();

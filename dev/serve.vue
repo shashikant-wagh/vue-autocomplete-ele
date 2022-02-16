@@ -1,8 +1,8 @@
 <script>
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 import VueAutocompleteEle from '@/vue-autocomplete-ele.vue';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'ServeDev',
   components: {
     VueAutocompleteEle
