@@ -83,7 +83,7 @@ import VueAutocompleteEle from 'vue-autocomplete-ele';
 ```
 
 
-## Example With Request <a name = "example-request"></a>
+## Example With Request <a name = "example-request"></a> (Comming soon...)
 ```
 <vue-autocomplete-ele
     :src="{
