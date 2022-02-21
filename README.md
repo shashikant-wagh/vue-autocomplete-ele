@@ -7,6 +7,9 @@
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Example](#example)
+- Examples
+  - [Example With Data](#example-data)
+  - [Example With Request](#example-request)
 - [References](#references)
 
 ## Introduction <a name = "introduction"></a>
@@ -35,7 +38,7 @@ import VueAutocompleteEle from 'vue-autocomplete-ele';
 
 | Prop                | Type          | <div style="width:290px">Default </div>                   | Description                   |
 |---------------------|---------------|---------------------------|-------------------------------|
-| src                 | Object        |                           | ```{ data: Array| request: Function, valueIndex: String <from data>, labelIndex: String <from data>}```|
+| src                 | Object        |                           | ```{ data: Array/request: Function, valueIndex: String <from data>, labelIndex: String <from data>}```|
 | id                  | String        | vue-autocomplete          | Id for input ele
 | minChars            | Number        | 0                         | Minimum number of characters (>=1) a user must type before a search is performed.|
 | delay               | Number        | 0                         | The delay in milliseconds between when a keystroke occurs and when a search is performed. A zero-delay is more responsive, but can produce a lot of load.|
@@ -50,7 +53,37 @@ import VueAutocompleteEle from 'vue-autocomplete-ele';
 | onSelectHandler     | Function      |                           | The onSelectHandler function allows to do something on select event|
 
 
-## Example <a name = "example"></a>
+## Example With Data <a name = "example-data"></a>
+```
+<vue-autocomplete-ele
+    :src="{
+        data: [
+            {
+                'id': 125,
+                'sku': 'AAAAAAAAAA',
+            },
+            {
+                'id': 154,
+                'sku': 'LIQ-01',
+            },
+            {
+                'id': 186,
+                'sku': 'SHEET-01',
+            },
+            {
+                'id': 187,
+                'sku': 'SHEET-02',
+            }
+        ],
+        valueIndex: 'id',
+        labelIndex: 'sku'
+    }"
+    @selected="autocomplete = $event" // returning data for valueIndex for selected item
+/>
+```
+
+
+## Example With Request <a name = "example-request"></a>
 ```
 <vue-autocomplete-ele
     :src="{
