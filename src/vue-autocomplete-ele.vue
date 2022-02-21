@@ -8,8 +8,9 @@
 
 
 <script>
+
+    import './assets/css/auto-complete.css';
     import autoComplete from './assets/js/auto-complete.js';
-    import logErrorsMixin from './assets/js/logErrorsMixin.js';
 
     export default {
         name: 'VueAutocompleteEle',
@@ -53,8 +54,6 @@
             onSelectHandler: Function,
         },
 
-        mixins: [logErrorsMixin],
-
         data() {
             return {
                 choices: [],
@@ -70,6 +69,18 @@
                     }
                 },
                 immediate: true,
+            },
+
+            'src.request': {
+                handler: async function () {
+                    if(this.src.request) {
+                        if(typeof this.src.request === 'function') {
+                            let response = await this.src.request();
+                            this.choices = this.formatChoices(response);
+                        }
+                    }
+                },
+                immediate: true
             }
         },
 
@@ -152,16 +163,3 @@
     }
 
 </script>
-
-
-<style scoped>
-    .autocomplete-suggestions {
-        text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
-        /* core styles should not be changed */
-        position: absolute; display: none; z-index: 9999; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
-    }
-    .autocomplete-suggestion { position: relative; padding: 3px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
-    .autocomplete-suggestion b { font-weight: normal; color: #1f8dd6; }
-    .autocomplete-suggestion.selected b { color: #FFF !important; }
-    .autocomplete-suggestion.selected { background-color: #337AB7 !important; color: #FFF; }
-</style>
