@@ -87,29 +87,23 @@ import VueAutocompleteEle from 'vue-autocomplete-ele';
 ```
 <vue-autocomplete-ele
     :src="{
-        data: [
-            {
-                'id': 125,
-                'sku': 'AAAAAAAAAA',
-            },
-            {
-                'id': 154,
-                'sku': 'LIQ-01',
-            },
-            {
-                'id': 186,
-                'sku': 'SHEET-01',
-            },
-            {
-                'id': 187,
-                'sku': 'SHEET-02',
-            }
-        ],
+        request: this.getRequest, // passing get request 
         valueIndex: 'id',
         labelIndex: 'sku'
     }"
     @selected="autocomplete = $event" // returning data for valueIndex for selected item
 />
+
+// This is how the request will look like, you are basically passing a promise which then will resolved in <vue-autocomplete-ele>
+getRequest(token) {
+    return new Promise((resolve, reject) => {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/url?search='+token);
+        xhr.onload = () => resolve(JSON.parse(xhr.response).resultSet);
+        xhr.onerror = () => reject(xhr.statusText);
+        xhr.send();
+    });
+}
 ```
 
 ## References <a name = "references"></a>
