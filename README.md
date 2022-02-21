@@ -35,8 +35,8 @@ import VueAutocompleteEle from 'vue-autocomplete-ele';
 
 | Prop                | Type          | <div style="width:290px">Default </div>                   | Description                   |
 |---------------------|---------------|---------------------------|-------------------------------|
-| src                 | Object        |                           | ```{ data: Array, valueIndex: String <from data>, labelIndex: String <from data>}```|
-| id                  | String        | vue-autocomplete          |
+| src                 | Object        |                           | ```{ data: Array| request: Function, valueIndex: String <from data>, labelIndex: String <from data>}```|
+| id                  | String        | vue-autocomplete          | Id for input ele
 | minChars            | Number        | 0                         | Minimum number of characters (>=1) a user must type before a search is performed.|
 | delay               | Number        | 0                         | The delay in milliseconds between when a keystroke occurs and when a search is performed. A zero-delay is more responsive, but can produce a lot of load.|
 | offsetLeft          | Number        | 1                         | Optional left offset of the suggestions container.|
